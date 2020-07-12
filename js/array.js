@@ -40,4 +40,67 @@ console.log(Object.values(person));
 // Store object values & keys into an array
 console.log(Object.entries(person));
 
+[1,2,4,5,6].map((item, index)=>{
+    console.log(item, index);
+})
 
+let studentObj = [
+    {name:'Amit', std:'10th', location:'Mumbai', marks:120},
+    {name: 'Ramesh', std:'10th', location:'Mumbai', marks:80},
+    {name: 'Vinit', std:'10th', location:'Mumbai', marks:100}
+]
+
+// Filter method for filter student object
+let filteredLoacation = studentObj.filter(item => item.marks === 100);
+console.log(filteredLoacation);
+
+// The find() method returns the value of the first element in the provided array that satisfies the provided testing function.
+let found = studentObj.find((item)=>{
+    return item.marks >= 100;
+})
+console.log(found);
+// The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+let someelem = studentObj.some((item)=>{
+    return item.marks >= 200;
+})
+console.log(someelem);
+
+// The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in single output value.
+let totalVal = studentObj.reduce((acc, obj)=>{
+    return acc + obj.marks;
+},0)
+console.log(totalVal);
+
+let numele = [10,20,30,40,50];
+let total = numele.reduce((accumulator, item)=>{
+    return accumulator + item;
+})
+console.log(total);
+
+// Series the array items
+const arr = [0, 1, 1, 0, 0 , 0, 1]
+const nonRepeating = []
+for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === 1) {
+    nonRepeating.push(arr[i])
+  }
+    if(arr[i] === 0) {
+    nonRepeating.unshift(arr[i])
+  }
+}
+console.log(nonRepeating);
+
+
+const arr1 = [1, 3, 1, 5, 9 , 5, 6]
+const obj1 = {}
+const nonRepeat = []
+for(let i = 0; i < arr1.length; i++) {
+            obj1[arr1[i]] = obj1[arr1[i]] ? obj1[arr1[i]] + 1 : 1
+}
+const data = Object.keys(obj1)
+for(let i = 0; i < data.length; i++) {
+    if(obj1[data[i]] === 1) {
+        nonRepeat.push(parseInt(data[i]))
+    }
+}
+console.log(nonRepeat)
