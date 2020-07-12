@@ -95,7 +95,7 @@ const arr1 = [1, 3, 1, 5, 9 , 5, 6]
 const obj1 = {}
 const nonRepeat = []
 for(let i = 0; i < arr1.length; i++) {
-            obj1[arr1[i]] = obj1[arr1[i]] ? obj1[arr1[i]] + 1 : 1
+    obj1[arr1[i]] = obj1[arr1[i]] ? obj1[arr1[i]] + 1 : 1
 }
 const data = Object.keys(obj1)
 for(let i = 0; i < data.length; i++) {
