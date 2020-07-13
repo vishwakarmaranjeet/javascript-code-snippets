@@ -104,3 +104,10 @@ for(let i = 0; i < data.length; i++) {
     }
 }
 console.log(nonRepeat)
+
+let arrayList = [1,2,[3,4],[5,6,[7,8]]];
+let merged = [].concat.apply([], arrayList);
+console.log(merged);
+
+let merged1 = arrayList.flat(Infinity);
+console.log(merged1);
