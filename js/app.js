@@ -152,3 +152,29 @@ let obj2 = {
 }
 console.log(obj3.firstName());
 console.log(obj2.firstName());
+
+// Prototype inheritance
+function Being(){
+    this.living = true;
+}
+Being.prototype.breathes = function(){
+    console.log('true');
+}
+
+Robert.prototype = new Being;
+
+function Robert(){
+    this.blog = true;
+}
+Robert.prototype.getsBored = function(){
+    console.log('You are alive')
+}
+var me = new Robert();
+me.getsBored();
+me.breathes();
+
+
+Function.prototype.ranjeet = function(){
+
+}
+
