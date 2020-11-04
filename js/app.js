@@ -173,8 +173,14 @@ var me = new Robert();
 me.getsBored();
 me.breathes();
 
-
-Function.prototype.ranjeet = function(){
-
+let personObj = {
+    firstName:'Ranjeet',
+    lastName:'Vishwakarma',
 }
+let getFullName = function(location){
+    console.log(`${this.firstName} ${this.lastName} ${location}`);
+}
+getFullName.call(personObj, 'Mumbai', 'call');
+getFullName.apply(personObj, ['Delhi', 'apply']);
+let bindPerson = getFullName.bind(personObj, 'Gorakhpur', 'bind')
 
