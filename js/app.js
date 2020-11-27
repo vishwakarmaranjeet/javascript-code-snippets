@@ -184,3 +184,126 @@ getFullName.call(personObj, 'Mumbai', 'call');
 getFullName.apply(personObj, ['Delhi', 'apply']);
 let bindPerson = getFullName.bind(personObj, 'Gorakhpur', 'bind')
 
+
+// Function for convert date format from 01/01/1900 to 01 Jan 1900
+ const convertDateFormat = (str)=>{
+     let res = str.split('/');
+     let monthsName =['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+     var d = new Date(res[2],res[0],-res[1]);
+     return res[1]+' '+monthsName[d.getMonth()]+' '+res[2];
+};
+
+// Function for convert date with day format from 01/01/1900 to Mon, 01 Jan 1900
+ const getDateFormateWithDay =(str)=>{
+     let res = str.split('/');
+     let days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+     let monthsName =['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+     var d = new Date(res[2],res[0],-res[1]);
+     return res[1]+' '+days[d.getDay()] + ', ' +monthsName[d.getMonth()]+' '+res[2];
+ };
+
+function colorArrayToHex(color) {
+  if (!color || color.length != 4) {
+    return '';
+  }
+
+  return '#' + rgbComponentToHex(color[0]) + rgbComponentToHex(color[1]) +
+      rgbComponentToHex(color[2]);
+}
+
+const arr = [1, 3, 1, 5, 9 , 5, 6]
+const obj = {}
+const nonRepeating = []
+for(let i = 0; i < arr.length; i++) {
+            obj[arr[i]] = obj[arr[i]] ? obj[arr[i]] + 1 : 1
+}
+const data = Object.keys(obj)
+for(let i = 0; i < data.length; i++) {
+    if(obj[data[i]] === 1) {
+         nonRepeating.push(parseInt(data[i]))
+    }
+}
+console.log(nonRepeating)
+
+const arr = [0, 1, 1, 0, 0 , 0, 1]
+const nonRepeating = []
+for(let i = 0; i < arr.length; i++) {
+            if(arr[i] === 1) {
+          nonRepeating.push(arr[i])
+  }
+           if(arr[i] === 0) {
+          nonRepeating.unshift(arr[i])
+  }
+}
+console.log(nonRepeating) 
+
+Format 2 Numbers decimal
+
+var num1 = "1";
+document.getElementById('num1').innerHTML = (Math.round(num1 * 100) / 100).toFixed(2);
+var num2 = "1.341";
+document.getElementById('num2').innerHTML = (Math.round(num2 * 100) / 100).toFixed(2);
+var num3 = "1.345";
+document.getElementById('num3').innerHTML = (Math.round(num3 * 100) / 100).toFixed(2);
+
+const getPassingGrades = grades =>{
+	return grades.filter(grade => grade > 10);
+}
+console.log(getPassingGrades([15, 8, 13]));
+
+// function for check valid json
+function isValidJson(json){
+	try{
+		JSON.parse(json);
+		return true;
+	}catch(3){
+		return false;
+	}
+}
+var validjson = '{"firstName":"James","lastName":"Bond"}'; 
+var invalidjson = '{"firstName""James","lastName":"Bond"}'; 
+
+isValidJson(validjson);
+
+// to check empty object
+Object.keys(obj).length === 0 && obj.constructor === Object 
+
+Object.entries(obj).length === 0 && obj.constructor === Object 
+
+// Return current date
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+console.log(today);
+
+
+// returning index of an element
+let arr = [5, 12, 15, 20, 45];
+function isLargeNumber(element){
+	return element > 10;
+}
+console.log(arr.findIndex(isLargeNumber));
+
+// Sorting the numbers
+let numbers = [1, 2, 5, 3, 4];
+numbers.sort((a, b) => b - a);
+console.log(numbers); // [5, 4, 3, 2, 1]
+
+// program to generate random strings
+
+// declare all characters
+let characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+function generateString(length) {
+    let result = ' ';
+    let charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+console.log(generateString(5));
